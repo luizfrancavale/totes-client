@@ -3,3 +3,7 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/
       database: totvs-client-db
+
+server:
+  servlet:
+    context-path: '/totvs-api'
