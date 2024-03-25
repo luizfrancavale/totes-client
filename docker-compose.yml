@@ -1,0 +1,19 @@
+services:
+  mongo:
+    image: mongo:latest
+    networks:
+      - mynetwork
+    ports:
+      - "27017:27017"
+  backend:
+    build: .
+    networks:
+      - mynetwork
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+
+networks:
+  mynetwork:
+    driver: bridge
